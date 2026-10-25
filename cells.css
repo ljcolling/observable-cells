@@ -1,0 +1,2 @@
+/* The runtime marks outputs it hides, such as the values of named cells; this was Quarto's own quarto-ojs.css rule. */
+.quarto-ojs-hide { display: none; }

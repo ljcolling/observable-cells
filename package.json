@@ -1,0 +1,71 @@
+{
+  "name": "@ljcolling/observable-cells",
+  "version": "1.1.0",
+  "description": "Observable JavaScript cells in Markdown: a remark plugin that renders ```ojs code blocks and a browser client that runs them.",
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "unified",
+    "markdown",
+    "mdx",
+    "observable",
+    "ojs",
+    "quarto",
+    "astro",
+    "react"
+  ],
+  "license": "ISC",
+  "author": "Lincoln Colling",
+  "type": "module",
+  "exports": {
+    "./remark": {
+      "types": "./dist/remark.d.ts",
+      "default": "./dist/remark.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./cells.css": "./cells.css",
+    "./THIRD-PARTY-NOTICES.md": "./THIRD-PARTY-NOTICES.md"
+  },
+  "files": [
+    "dist",
+    "runtime/quarto-ojs-runtime.js",
+    "runtime/quarto-ojs-runtime.d.ts",
+    "runtime/LICENSE",
+    "cells.css",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
+    "test": "bun test",
+    "update-runtime": "bun scripts/update-runtime.ts",
+    "check-runtime": "bun scripts/update-runtime.ts --check",
+    "prepublishOnly": "bun test && bun run build"
+  },
+  "dependencies": {
+    "@observablehq/parser": "4.2.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "@types/hast": "^3.0.5",
+    "@types/mdast": "^4.0.4",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "typescript": "^7.0.2",
+    "unified": "^11.0.5",
+    "vfile": "^6.0.3"
+  }
+}
