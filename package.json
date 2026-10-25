@@ -1,6 +1,6 @@
 {
   "name": "@ljcolling/observable-cells",
-  "version": "1.1.0",
+  "version": "0.0.1",
   "description": "Observable JavaScript cells in Markdown: a remark plugin that renders ```ojs code blocks and a browser client that runs them.",
   "keywords": [
     "remark",
